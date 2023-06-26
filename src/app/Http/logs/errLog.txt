@@ -115,3 +115,11 @@
 2023-06-20	11:35:17	2166aaf8-683e-4a8d-8f14-c7bc1b31dc9b	MongoServerError: undefined
 2023-06-21	13:18:14	ec1b1f61-76d9-4203-a08d-aa90858cec18	MongoServerError: undefined
 2023-06-26	14:56:46	f9d201e0-6407-4bfe-875b-1b090425cba9	Error: undefined
+2023-06-26	15:56:58	45f8d451-519f-4a25-a1a1-72b912828c18	AxiosError: undefined
+2023-06-26	15:56:58	58bc4873-ef7d-4cd8-8f31-081d3a2776d9	AxiosError: undefined
+2023-06-26	15:58:07	b9c030c7-c6bb-4180-9261-c7a7c65e0ea8	AxiosError: undefined
+2023-06-26	15:58:07	5f46a789-4284-46ca-bec8-6297133f5089	AxiosError: undefined
+2023-06-26	16:04:08	4a09468c-69cf-4e06-b445-57e7b60be1ca	AxiosError: undefined
+2023-06-26	16:04:08	155e12aa-4a5e-421b-9e16-5e95790b905c	AxiosError: undefined
+2023-06-26	16:16:50	0ec3aced-dd85-41b5-be7f-a0790635ab14	AxiosError: undefined
+2023-06-26	16:16:50	1182928b-fac1-45ed-8508-d31ff10daac2	AxiosError: undefined

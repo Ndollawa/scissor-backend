@@ -113,10 +113,11 @@ public updateClick = async (req:Request, res:Response) => {
     const ipAddress = IP.address()
     const userIP = requestIP.getClientIp(req)
     const apiKey = process.env.IP_GEOLOCATION_KEY
-    const getClientInfo = await axios.get(`https://api.ipgeolocation.io/ipgeo?apiKey=${apiKey}&ip=${userIP}&fields=geo&excludes=continent_code,currency,time_zone`)
+    console.log(apiKey)
+    const getClientInfo = await axios.get(`https://api.ipgeolocation.io/ipgeo?apiKey=${apiKey}&ip=${userIP}&fields=geo&excludes=continent_code,continent_name`)
     const referrer = req.headers.referer
     const userAgent = req.headers['user-agent']
-    console.log(getClientInfo,userIP)
+    console.log(getClientInfo.data,userIP)
     const data = {ip:userIP,userAgent,referrer,ipInfo:{...getClientInfo}}
    url.clicks = url.clicks + 1
    url.updateOne(
