@@ -76,7 +76,6 @@ class UrlController extends BaseController {
 public update = async (req:Request, res:Response) => {
     const { user,originalURL,customUrl,_id,status,clicks} = req.body
     // Confirm data
-    console.log(req.body)
     if (!originalURL) {
         return res.status(400).json({ message: 'All fields are required' })
     }
@@ -113,20 +112,21 @@ public updateClick = async (req:Request, res:Response) => {
     const ipAddress = IP.address()
     const userIP = requestIP.getClientIp(req)
     const apiKey = process.env.IP_GEOLOCATION_KEY
-    console.log(apiKey)
-    const getClientInfo = await axios.get(`https://api.ipgeolocation.io/ipgeo?apiKey=${apiKey}&ip=${userIP}&fields=geo&excludes=continent_code,continent_name`)
+    // console.log(url)
+    
+    const getClientInfo = await axios.get(`http://ip-api.com/json/${userIP}`)
     const referrer = req.headers.referer
     const userAgent = req.headers['user-agent']
-    console.log(getClientInfo.data,userIP)
     const data = {ip:userIP,userAgent,referrer,ipInfo:{...getClientInfo}}
-   url.clicks = url.clicks + 1
-   url.updateOne(
-    // { _id: commentId }, // Specify the document to update based on the _id
-   {$push: {
+
+   const updatedURL =  await URLModel.updateOne(
+    { _id }, // Specify the document to update based on the _id
+   {clicks:url.clicks + 1,
+    $push: {
         traffic: {...data}}} 
   )
 
-  const updatedURL = await url.save()
+ 
     return res.status(201).json({status:'success', message: 'URL updated successfully',updatedURL })
 
 }
@@ -143,20 +143,18 @@ public handleRedirect = async (req:Request, res:Response) => { const { shortURL 
     const ipAddress = IP.address()
     const userIP = requestIP.getClientIp(req)
     const apiKey = process.env.IP_GEOLOCATION_KEY
-    const getClientInfo = await axios.get(`https://api.ipgeolocation.io/ipgeo?apiKey=${apiKey}&ip=${userIP}&fields=geo&excludes=continent_code,currency,time_zone`)
+    const getClientInfo = await axios.get(`http://ip-api.com/json/${userIP}`)
     const referrer = req.headers.referer
     const userAgent = req.headers['user-agent']
-    console.log(getClientInfo,userIP)
     const data = {ip:userIP,userAgent,referrer,ipInfo:{...getClientInfo}}
-   url.clicks = url.clicks + 1
-   url.updateOne(
-    // { _id: commentId }, // Specify the document to update based on the _id
-   {$push: {
-        traffic: {...data}}} 
-  )
-
-  const updatedURL = await url.save()
-    return res.redirect(updatedURL?.originalURL)
+  
+    const updatedURL =  await URLModel.updateOne(
+      { shortURL }, // Specify the document to update based on the _id
+     {clicks:url.clicks + 1,
+      $push: {
+          traffic: {...data}}} 
+    )
+    return res.redirect(url?.originalURL as string)
    
 } 
 // @desc Delete a url
