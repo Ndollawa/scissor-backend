@@ -1,5 +1,5 @@
 import {Request,Response, NextFunction } from 'express';
-import allowedOrigins from '../../../config/allowedOrigins';
+import allowedOrigins from '../../../config/allowedOrigins.js';
 
 
 

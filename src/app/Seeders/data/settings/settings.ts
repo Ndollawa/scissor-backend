@@ -1,4 +1,4 @@
-import SettingModel from "../../../Models/Setting";
+import SettingModel from "../../../Models/Setting.js";
 
 
 

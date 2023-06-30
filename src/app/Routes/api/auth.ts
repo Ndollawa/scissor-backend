@@ -2,9 +2,9 @@ import  express ,{Response,Request,NextFunction} from 'express';
 const router = express.Router();
 
 
-import AuthController from '../../Http/Controllers/AuthController';
-import RegisterController  from '../../Http/Controllers/RegisterController';
-import loginLimiter from '../../Http/Middleware/loginLimiter';
+import AuthController from '../../Http/Controllers/AuthController.js';
+import RegisterController  from '../../Http/Controllers/RegisterController.js';
+import loginLimiter from '../../Http/Middleware/loginLimiter.js';
 
 router.route('/')
 .post(loginLimiter,(req:Request, res:Response,next:NextFunction)=>AuthController.login(req,res));

@@ -1,9 +1,9 @@
-import  UserModel from '../../Models/User';
+import  UserModel from '../../Models/User.js';
 import bcrypt from 'bcrypt';
 // import {fileURLToPath} from 'url';
 import { Request, Response } from 'express';
-import BaseController from './BaseController';
-import deleteItem from '../../utils/deleteItem';
+import BaseController from './BaseController.js';
+import deleteItem from '../../utils/deleteItem.js';
 
 class UsersController extends BaseController{
     constructor(){

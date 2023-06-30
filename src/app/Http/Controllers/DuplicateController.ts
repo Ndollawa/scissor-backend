@@ -1,4 +1,4 @@
-import  UserModel from '../../Models/User';
+import  UserModel from '../../Models/User.js';
 import { Request, Response } from 'express';
 // import {fileURLToPath} from 'url';
 // require('dotenv').config()

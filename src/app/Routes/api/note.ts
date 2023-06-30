@@ -1,10 +1,10 @@
 import express, {Request,Response , NextFunction } from 'express';
 const router = express.Router();
 import path  from 'path';
-import ROLES_LIST  from '../../../config/roleList';
-import verifyRoles  from '../../Http/Middleware/verifyRoles';
-import NoteController from '../../Http/Controllers/TodoController';
-import useMulter from '../../utils/useMulter';
+import ROLES_LIST  from '../../../config/roleList.js';
+import verifyRoles  from '../../Http/Middleware/verifyRoles.js';
+import NoteController from '../../Http/Controllers/TodoController.js';
+import useMulter from '../../utils/useMulter.js';
 // import verifyJWT from '../../Http/Middleware/verifyJWT';
 
 const upload = useMulter('note')

@@ -1,6 +1,6 @@
 import bcrypt from 'bcrypt'
 import { exit } from 'process'
-import UserModel,{userInterface} from '../../../Models/User'
+import UserModel,{userInterface} from '../../../Models/User.js'
 
    
    const users =[

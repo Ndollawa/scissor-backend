@@ -1,7 +1,7 @@
-import NoteModel from '../../Models/Note'
+import NoteModel from '../../Models/Note.js'
 // import UserModel from '../../Models/User'
 import {Request, Response} from 'express'
-import BaseController from './BaseController'
+import BaseController from './BaseController.js'
 
 
 

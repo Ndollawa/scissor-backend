@@ -1,7 +1,7 @@
-import TodoModel from '../../Models/Todo'
+import TodoModel from '../../Models/Todo.js'
 // import UserModel from '../../Models/User'
 import {Request, Response} from 'express'
-import BaseController from './BaseController'
+import BaseController from './BaseController.js'
 
 
 

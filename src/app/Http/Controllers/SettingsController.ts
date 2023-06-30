@@ -1,7 +1,7 @@
-import  SettingsModel from '../../Models/Setting';
+import  SettingsModel from '../../Models/Setting.js';
 import { Request, Response } from 'express';
-import deleteItem from '../../utils/deleteItem';
-import BaseController from './BaseController';
+import deleteItem from '../../utils/deleteItem.js';
+import BaseController from './BaseController.js';
 
 class SettingsController extends BaseController{
     constructor(){

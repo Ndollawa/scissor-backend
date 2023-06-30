@@ -36,7 +36,7 @@ const wordsCount = (string)=>{
     return (string.match(reg) || []).length;
 }
 
-const otherLanguageReadTime = (string){
+const otherLanguageReadTime = (string)=>{
     const pattern ='[\u3040-\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\uff66-\uff9f]';
     const reg = new RegExp(pattern,'g');
     const count = (string.match(reg) || []).length;

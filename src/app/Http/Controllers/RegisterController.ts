@@ -1,4 +1,4 @@
-import  UserModel from '../../Models/User';
+import  UserModel from '../../Models/User.js';
 import  bcrypt from 'bcrypt';
 import path from 'path';
 // import {fileURLToPath} from 'url';
