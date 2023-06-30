@@ -11,14 +11,14 @@ class TodoController extends BaseController {
 
    }
 
-// @desc Get all notes 
-// @route GET /notes
+// @desc Get all todo 
+// @route GET /todo
 // @access public
  public selectAll = async (req:Request, res:Response) => {
-    // Get all notes from MongoDB
+    // Get all todo from MongoDB
     const todo = await TodoModel.find().lean()
 
-    // If no notes 
+    // If no todo 
     if (!todo?.length) {
         return res.status(400).json({ message: 'No todo found' })
     }
@@ -38,25 +38,23 @@ class TodoController extends BaseController {
 // @route POST /todo
 // @access authorized user
  public create = async (req:Request, res:Response) => {
-    const { title, description, status } = req.body
-    const file = req.file!
-    console.log(req.body)
+    const { todo,  status } = req.body
     // Confirm data
-    if (!description || !title || !status || !req.file) {
+    if ( !todo) {
         return res.status(400).json({ message: 'All fields are required' })
     }
 
-    // Check for duplicate title
-    const duplicate = await TodoModel.findOne({ title }).collation({ locale: 'en', strength: 2 }).lean().exec()
+    // Check for duplicate todo
+    const duplicate = await TodoModel.findOne({ todo }).collation({ locale: 'en', strength: 2 }).lean().exec()
 
     if (duplicate) {
-        return res.status(409).json({ message: 'Duplicate todo title' })
+        return res.status(409).json({ message: 'Duplicate todo todo' })
     }
 
     // Create and store the new user 
-    const todo = await TodoModel.create({ title,description,image:file.filename,status })
+    const Todo = await TodoModel.create({ todo,status })
 
-    if (todo) { // Created 
+    if (Todo) { // Created 
         return res.status(201).json({ message: 'New todo created' })
     } else {
         return res.status(400).json({ message: 'Invalid todo data received' })
@@ -68,37 +66,34 @@ class TodoController extends BaseController {
 // @route PATCH /todo
 // @access authorized user
 public update = async (req:Request, res:Response) => {
-    const {title, description,_id,status} = req.body
+    const {todo, _id,status} = req.body
 const image = req?.file!
     // Confirm data
-    if (!title || !description) {
+    if (!todo) {
         return res.status(400).json({ message: 'All fields are required' })
     }
 
     // Confirm todo exists to update
-    const todo = await TodoModel.findById({_id}).exec()
+    const Todo = await TodoModel.findById({_id}).exec()
 
-    if (!todo) {
+    if (!Todo) {
         return res.status(400).json({ message: 'todo not found' })
     }
 
-    // Check for duplicate title
-    const duplicate = await TodoModel.findOne({ title }).collation({ locale: 'en', strength: 2 }).lean().exec()
+    // Check for duplicate todo
+    const duplicate = await TodoModel.findOne({ todo }).collation({ locale: 'en', strength: 2 }).lean().exec()
 
     // Allow renaming of the original note 
     if (duplicate && duplicate?._id.toString() !== _id) {
-        return res.status(409).json({ message: 'Duplicate note title' })
+        return res.status(409).json({ message: 'Duplicate note todo' })
     }
 
-    todo.title = title
-    if(image)todo.image = image.filename
-    
-    todo.description = description
-    todo.status = status
+    Todo.todo = todo
+    Todo.status = status
 
-    const updatedTodo = await todo.save()
+    const updatedTodo = await Todo.save()
 
-    res.json(`'${updatedTodo.title}' updated`)
+    res.json(`'${updatedTodo.todo}' updated`)
 }
 
 // @desc Delete a todo

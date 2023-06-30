@@ -112,12 +112,12 @@ public updateClick = async (req:Request, res:Response) => {
     const ipAddress = IP.address()
     const userIP = requestIP.getClientIp(req)
     const apiKey = process.env.IP_GEOLOCATION_KEY
-    // console.log(url)
     
     const getClientInfo = await axios.get(`http://ip-api.com/json/${userIP}`)
+//    return console.log(getClientInfo)
     const referrer = req.headers.referer
     const userAgent = req.headers['user-agent']
-    const data = {ip:userIP,userAgent,referrer,ipInfo:{...getClientInfo}}
+    const data = {ip:userIP,userAgent,referrer,ipInfo:{...getClientInfo.data}}
 
    const updatedURL =  await URLModel.updateOne(
     { _id }, // Specify the document to update based on the _id

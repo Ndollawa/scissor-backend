@@ -91,9 +91,9 @@ const image = req?.file!
 
     note.body = body
     note.title = title
-    if(image)note.image = image.filename
+    // if(image)note.image = image.filename
     
-    note.description = description
+    // note.description = description
     note.status = status
 
     const updatedNote = await note.save()
