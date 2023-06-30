@@ -22645,3 +22645,4 @@
 2023-06-30	06:56:59	7e0e85cf-b15a-4b91-a061-0ea3a2d7b059	PATCH	http://localhost:3000	/shorten-url/click
 2023-06-30	06:56:59	171e24c1-5f12-4db7-89d0-3479f12a3f52	PATCH	http://localhost:3000	/shorten-url/click
 2023-06-30	07:02:25	24052881-c1ba-4a54-8264-43ff31042346	GET	undefined	//uploads/settings/1
+2023-06-30	07:09:29	313cf513-2f00-40b5-ba63-567cefef04a5	GET	undefined	//uploads/settings/1
