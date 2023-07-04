@@ -7,6 +7,7 @@ import UserModel,{userInterface} from '../../../Models/User.js'
     {
          email: 'admin@admin.com',
         username : "admin",
+        fullName:'Administrator',
         roles:{
             User:1003,
             Admin:1000,
@@ -18,6 +19,7 @@ import UserModel,{userInterface} from '../../../Models/User.js'
     {
          email: 'dev@admin.com',
         username : "developer",
+        fullName:'Developer',
         roles:{
             User:1003,
             Admin:1001,
@@ -30,6 +32,7 @@ import UserModel,{userInterface} from '../../../Models/User.js'
 const userSeed =async()=>{
 users.map(async(user:{
     username:string;
+    fullName:string;
     password:string;
     refreshToken:string[];
     email:string;
@@ -54,6 +57,7 @@ users.map(async(user:{
     const newUser = await UserModel.create({
         'email': user.email,
         'username' : user.username,
+        'fullName' : user.fullName,
         'roles':user.roles,
         'password':hashedPassword});
     // userDB.
