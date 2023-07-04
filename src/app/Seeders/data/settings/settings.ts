@@ -6,14 +6,14 @@ enum Styles{STYLE_1=1,STYLE_2, STYLE_3};
 
 const settings = {
     "companyDetails": {
-      "siteName": "PayBuddie",
+      "siteName": "Scissor",
       "zip": "540212",
       "city": "Enugu",
       "state": "Enugu",
       "country": "Nigeria",
-      "description": "Some brief description here about the company would do!",
+      "description": "Scissor is the ultimate URL link shortener designed to simplify your online presence. With our powerful platform, you can transform long and complex URLs into short, custom-branded links that are easy to remember and share.",
       "email": [
-        "paybuddie@support.com"
+        "scissor@support.com"
       ],
       "contact": [
         "08155393750"
@@ -21,10 +21,10 @@ const settings = {
       "address": "14 Etta Agbor Road Calabar, CRS",
       "activeHours": "Mon - Fri: 7:00am - 6:00pm  Saturday: 9:00am - 5:00pm  Sunday: Closed",
       "socialMedia":{
-      "facebookHandle": "https://www.facebook.com/paybuddie",
-      "twitterHandle": "https://www.twitter.com/paybuddie",
-      "instagram": "https://www.instagram.com/paybuddie",
-      "whatsapp": "https://www.whatsapp.com/paybuddie",
+      "facebookHandle": "https://www.facebook.com/scissor",
+      "twitterHandle": "https://www.twitter.com/scissor",
+      "instagram": "https://www.instagram.com/scissor",
+      "whatsapp": "https://www.whatsapp.com/scissor",
       }
     },
     "siteImages":{

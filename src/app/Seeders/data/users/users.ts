@@ -55,7 +55,7 @@ users.map(async(user:{
 
     // create and save new User
     const newUser = await UserModel.create({
-        'email': user.email,
+        'email'    : user.email,
         'username' : user.username,
         'fullName' : user.fullName,
         'roles':user.roles,

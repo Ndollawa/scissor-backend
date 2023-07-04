@@ -117,7 +117,7 @@ public updateClick = async (req:Request, res:Response) => {
 //    return console.log(getClientInfo)
     const referrer = req.headers.referer
     const userAgent = req.headers['user-agent']
-    const data = {ip:userIP,userAgent,referrer,ipInfo:{...getClientInfo.data}}
+    const data = {ip:userIP,userAgent,referrer,ipInfo:{...getClientInfo.data},createdAt:Date.now()}
 
    const updatedURL =  await URLModel.updateOne(
     { _id }, // Specify the document to update based on the _id
@@ -146,7 +146,7 @@ public handleRedirect = async (req:Request, res:Response) => { const { shortURL 
     const getClientInfo = await axios.get(`http://ip-api.com/json/${userIP}`)
     const referrer = req.headers.referer
     const userAgent = req.headers['user-agent']
-    const data = {ip:userIP,userAgent,referrer,ipInfo:{...getClientInfo}}
+    const data = {ip:userIP,userAgent,referrer,ipInfo:{...getClientInfo},createdAt:Date.now()}
   
     const updatedURL =  await URLModel.updateOne(
       { shortURL }, // Specify the document to update based on the _id

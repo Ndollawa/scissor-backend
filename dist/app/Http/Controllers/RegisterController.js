@@ -7,7 +7,7 @@ import bcrypt from 'bcrypt';
 class RegisterController {
     // handles user registration
     register = async (req, res) => {
-        const { username, email, password } = req.body;
+        const { username, email, fullName, password } = req.body;
         if (!email || !password)
             return res.status(400).json({ 'message': 'Email and password are required!' });
         //check for duplicate emails in the DB
@@ -21,14 +21,14 @@ class RegisterController {
             const newUser = await UserModel.create({
                 'email': email,
                 'username': username,
-                // 'roles':{'Registeror':3},
+                'fullName': fullName,
                 'password': hashedPassword
             });
             // userDB.
-            res.status(201).json({ 'message': `New user ${email} created!` });
+            res.status(201).json({ status: 'success', 'message': `New user ${email} created!` });
         }
         catch (err) {
-            res.status(500).json({ 'message': err.message });
+            res.status(500).json({ 'message': err?.message });
         }
     };
 }

@@ -85,7 +85,7 @@ app.use(errorHandler);
 
 mongoose.connection.once('open',()=>{
     console.log('Connected to MongoDB');
-    // Seed();
+    Seed();
     app.listen(PORT, ()=>console.log(`Server running on Port ${PORT}`));
 
 });

@@ -4,6 +4,6 @@ const allowedOrigins = [
     'http://localhost:3500',
     'http://localhost:3000',
     'https://scissor-frontend-f60y.onrender.com',
-    'https://scissor-backend-11sy.onrender.com'
+    'https://scissors-psi.vercel.app'
 ];
 export default allowedOrigins;

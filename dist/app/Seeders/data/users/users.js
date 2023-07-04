@@ -4,6 +4,7 @@ const users = [
     {
         email: 'admin@admin.com',
         username: "admin",
+        fullName: 'Administrator',
         roles: {
             User: 1003,
             Admin: 1000,
@@ -14,6 +15,7 @@ const users = [
     {
         email: 'dev@admin.com',
         username: "developer",
+        fullName: 'Developer',
         roles: {
             User: 1003,
             Admin: 1001,
@@ -36,6 +38,7 @@ const userSeed = async () => {
                 const newUser = await UserModel.create({
                     'email': user.email,
                     'username': user.username,
+                    'fullName': user.fullName,
                     'roles': user.roles,
                     'password': hashedPassword
                 });

@@ -18,6 +18,7 @@ import URLRoutes from './app/Routes/api/shortenURL.js';
 import AuthRoutes from './app/Routes/api/auth.js';
 // import  PostModel from './src/app/Models/Post';
 import CheckDuplicateRoutes from './app/Http/Controllers/DuplicateController.js';
+import { Seed } from './app/Seeders/Seeder.js';
 import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -61,6 +62,6 @@ app.all('*', (req, res) => {
 app.use(errorHandler);
 mongoose.connection.once('open', () => {
     console.log('Connected to MongoDB');
-    // Seed();
+    Seed();
     app.listen(PORT, () => console.log(`Server running on Port ${PORT}`));
 });
