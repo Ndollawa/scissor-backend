@@ -1,4 +1,4 @@
-import UserModel from '../../Models/User';
+import UserModel from '../../Models/User.js';
 // import {fileURLToPath} from 'url';
 // require('dotenv').config()
 //  const __filename = fileURLToPath(import.meta.url);

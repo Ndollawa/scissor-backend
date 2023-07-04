@@ -1,10 +1,10 @@
 import express from 'express';
 const router = express.Router();
-import ROLES_LIST from '../../../config/roleList';
-import verifyRoles from '../../Http/Middleware/verifyRoles';
-import SettingsController from '../../Http/Controllers/SettingsController';
-import verifyJWT from '../../Http/Middleware/verifyJWT';
-import useMulter from '../../utils/useMulter';
+import ROLES_LIST from '../../../config/roleList.js';
+import verifyRoles from '../../Http/Middleware/verifyRoles.js';
+import SettingsController from '../../Http/Controllers/SettingsController.js';
+import verifyJWT from '../../Http/Middleware/verifyJWT.js';
+import useMulter from '../../utils/useMulter.js';
 const upload = useMulter('settings');
 router.route('/')
     .get((req, res, next) => SettingsController.list(req, res, next))

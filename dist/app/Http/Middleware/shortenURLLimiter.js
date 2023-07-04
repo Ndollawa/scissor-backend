@@ -1,5 +1,5 @@
 import rateLimit from 'express-rate-limit';
-import { logEvents } from './logEvents';
+import { logEvents } from './logEvents.js';
 const shortenURLLimiter = rateLimit({
     windowMs: 60 * 1000,
     max: 5,

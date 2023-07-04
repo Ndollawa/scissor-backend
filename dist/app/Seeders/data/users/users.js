@@ -1,5 +1,5 @@
 import bcrypt from 'bcrypt';
-import UserModel from '../../../Models/User';
+import UserModel from '../../../Models/User.js';
 const users = [
     {
         email: 'admin@admin.com',

@@ -1,7 +1,7 @@
 import path from 'path';
 import multer from 'multer';
 import fs from 'fs';
-import multerFilter from '../../config/multerConfig';
+import multerFilter from '../../config/multerConfig.js';
 import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

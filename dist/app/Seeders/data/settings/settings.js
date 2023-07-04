@@ -1,4 +1,4 @@
-import SettingModel from "../../../Models/Setting";
+import SettingModel from "../../../Models/Setting.js";
 var Styles;
 (function (Styles) {
     Styles[Styles["STYLE_1"] = 1] = "STYLE_1";

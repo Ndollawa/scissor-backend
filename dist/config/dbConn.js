@@ -5,7 +5,7 @@ const options = {
 };
 const connectDB = async () => {
     try {
-        const db = await mongoose.connect(`${process.env.DATABASE_URL}`, options);
+        const db = await mongoose.connect(`${process.env.ONLINE_DB_URL}`, options);
     }
     catch (err) {
         console.error(err);

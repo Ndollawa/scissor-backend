@@ -1,6 +1,6 @@
 import express from 'express';
 const router = express.Router();
-import RegisterController from '../../Http/Controllers/RegisterController';
+import RegisterController from '../../Http/Controllers/RegisterController.js';
 router.route('/')
     // .get((req:Request, res:Response,next:NextFunction)=>RegisterController.index)
     .post((req, res, next) => RegisterController.register);

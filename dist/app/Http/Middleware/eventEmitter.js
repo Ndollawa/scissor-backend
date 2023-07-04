@@ -1,5 +1,5 @@
 import { EventEmitter } from 'events';
-import { logEvents } from './logEvents';
+import { logEvents } from './logEvents.js';
 class Emitter extends EventEmitter {
 }
 const myEmitter = new Emitter();

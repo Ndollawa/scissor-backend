@@ -1,10 +1,10 @@
 import express from 'express';
 const router = express.Router();
-import ROLES_LIST from '../../../config/roleList';
-import verifyRoles from '../../Http/Middleware/verifyRoles';
-import URLShortenerController from '../../Http/Controllers/ShortenURLController';
-import verifyJWT from '../../Http/Middleware/verifyJWT';
-import shortenURLLimiter from '../../Http/Middleware/shortenURLLimiter';
+import ROLES_LIST from '../../../config/roleList.js';
+import verifyRoles from '../../Http/Middleware/verifyRoles.js';
+import URLShortenerController from '../../Http/Controllers/ShortenURLController.js';
+import verifyJWT from '../../Http/Middleware/verifyJWT.js';
+import shortenURLLimiter from '../../Http/Middleware/shortenURLLimiter.js';
 router.route('/')
     .get((req, res, next) => URLShortenerController.list(req, res, next))
     .post(shortenURLLimiter, verifyJWT, verifyRoles(ROLES_LIST.ADMIN, ROLES_LIST.DEV, ROLES_LIST.USER, ROLES_LIST.STAFF), (req, res, next) => URLShortenerController.create(req, res))

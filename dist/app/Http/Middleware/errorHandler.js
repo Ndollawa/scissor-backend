@@ -1,4 +1,4 @@
-import { logEvents } from './logEvents';
+import { logEvents } from './logEvents.js';
 const errorHandler = (err, req, res, next) => {
     logEvents(`${err.name}: ${err.messsage}`, 'errLog.txt');
     console.error(err.stack);

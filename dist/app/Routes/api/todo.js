@@ -1,10 +1,10 @@
 import express from 'express';
 const router = express.Router();
-import ROLES_LIST from '../../../config/roleList';
-import verifyRoles from '../../Http/Middleware/verifyRoles';
-import TodoController from '../../Http/Controllers/TodoController';
-import useMulter from '../../utils/useMulter';
-import verifyJWT from '../../Http/Middleware/verifyJWT';
+import ROLES_LIST from '../../../config/roleList.js';
+import verifyRoles from '../../Http/Middleware/verifyRoles.js';
+import TodoController from '../../Http/Controllers/TodoController.js';
+import useMulter from '../../utils/useMulter.js';
+import verifyJWT from '../../Http/Middleware/verifyJWT.js';
 const upload = useMulter('todo');
 router.route('/')
     .get((req, res, next) => TodoController.list(req, res, next))

@@ -1,5 +1,5 @@
-import NoteModel from '../../Models/Note';
-import BaseController from './BaseController';
+import NoteModel from '../../Models/Note.js';
+import BaseController from './BaseController.js';
 class NoteController extends BaseController {
     constructor() {
         super(NoteModel);

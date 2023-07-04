@@ -1,6 +1,6 @@
-import SettingsModel from '../../Models/Setting';
-import deleteItem from '../../utils/deleteItem';
-import BaseController from './BaseController';
+import SettingsModel from '../../Models/Setting.js';
+import deleteItem from '../../utils/deleteItem.js';
+import BaseController from './BaseController.js';
 class SettingsController extends BaseController {
     constructor() {
         super(SettingsModel);

@@ -1,5 +1,5 @@
-import TodoModel from '../../Models/Todo';
-import BaseController from './BaseController';
+import TodoModel from '../../Models/Todo.js';
+import BaseController from './BaseController.js';
 class TodoController extends BaseController {
     constructor() {
         super(TodoModel);

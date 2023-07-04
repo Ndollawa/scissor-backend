@@ -1,5 +1,5 @@
-import URLModel from '../../Models/URLModel';
-import BaseController from './BaseController';
+import URLModel from '../../Models/URLModel.js';
+import BaseController from './BaseController.js';
 import shortid from 'shortid';
 import validUrl from 'valid-url';
 import IP from 'ip';

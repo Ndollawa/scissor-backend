@@ -5,9 +5,9 @@
   "main": "server.ts",
   "type": "module",
   "scripts": {
-    "start": "node --max-old-space-size=4096  src/server.ts",
-    "dev": "nodemon --max-old-space-size=4096 src/server.ts",
-    "build": "tsc -p . && node --max-old-space-size=4096 dist/server.js",
+    "start": "node  dist/server.js",
+    "dev": "nodemon src/server.ts",
+    "build": "tsc -p . && node dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ndollawa",

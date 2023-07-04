@@ -106,7 +106,7 @@
     "transpileOnly": true,
     // "files":true,
     "esm":true,
-    "experimentalSpecifierResolution":"node",
+    "experimentalSpecifierResolution":"NodeNext",
     "compilerOptions":{
       "module":"es2022"
     }
